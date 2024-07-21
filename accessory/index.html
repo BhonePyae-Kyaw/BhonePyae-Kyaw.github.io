@@ -202,7 +202,7 @@
               <td class="text-right">${e.unitPrice.toFixed(2)}</td>
               <td class="text-right">${amount.toFixed(2)}</td>
               <td class="text-center">
-                  <button class="btn btn-danger" onclick="deleteItem(${i})">Delete</button></td>
+                  <button class="btn btn-danger" onclick="deleteItem(${i})">Remove</button></td>
           </tr>`;
         });
 
@@ -216,14 +216,12 @@
         var amount = parseInt($("#amount").val());
         var unitPrice = calculatePrice(accessory);
 
-        console.log(accessory, amount, unitPrice);
         quoationData.push({
           description: accessory,
           quantity: amount,
           unitPrice: unitPrice,
         });
         $("#exampleModalCenter").modal("hide");
-        console.log(quoationData);
         renderTable();
       }
 
